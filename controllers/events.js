@@ -27,10 +27,17 @@ const setFinalData = (eventsWithData, pageSize) => {
 
 
 const createEvent = async (req, res) => {
+   const requiredFields = ['event_name', 'city_name', 'date', 'time', 'latitude', 'longitude'];
+   const missingFields = requiredFields.filter(field => !(field in req.body));
+   if (missingFields.length > 0) {
+     return res.status(400).json({ error: `Missing required field(s): ${missingFields.join(', ')}` });
+   }
 
   try {
+    
 
     const eventdata = req.body;
+
     const saveddata = await Event.create(eventdata);
 
     res.status(201).json(saveddata);
