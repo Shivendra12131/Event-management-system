@@ -36,14 +36,9 @@ if (missingFields.length > 0) {
     success:false,
      error: missingFields });
 }
-
   try {
-    
-
     const eventdata = req.body;
-
     const saveddata = await Event.create(eventdata);
-
     res.status(201).json(saveddata);
     res.end();
   } catch (error) {
@@ -96,8 +91,9 @@ if(!latitude||!longitude||!date){
       const finalData = setFinalData(eventsWithData, 10);
   
       res.status(200).json({
-        data: finalData,
-        datas,
+          success:true,
+        data: finalData
+        
       });
     } catch (err) {
       console.log(err);
