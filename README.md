@@ -1,4 +1,4 @@
-#EVENT MANAGEMENT SYSTEM
+EVENT MANAGEMENT SYSTEM
 
 This project is a RESTful API built with Node.js and Express.js for managing events. It uses MongoDB as the database to store event data and includes routes for creating and finding events. Additionally, it utilizes utility functions in the utility folder for handling specific functionalities like formatted dates, fetching distances, and fetching weather data.
 Technologies Used
@@ -6,7 +6,7 @@ Node.js
 Express.js
 MongoDB
 
-#Getting Started
+Getting Started
 
 Clone the repository: git clone <repository-url>
 
@@ -20,7 +20,7 @@ API Endpoints
 POST /api/events/create - Create a new event
 GET /api/events/find - Find events based on user input (longitude, latitude, date)
 
-#Usage
+Usage
 
 Create a new event:
 Send a POST request to /api/events/create with event data (name, date, longitude, latitude)
