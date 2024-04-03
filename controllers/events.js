@@ -81,7 +81,7 @@ if(!latitude||!longitude||!date){
           return {
             eventName: event.event_name,
             city: event.city_name,
-            date: event.date,
+            date: event.date.toISOString().substring(0, 10),
             weather,
             distance,
           };
