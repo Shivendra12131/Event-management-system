@@ -1,4 +1,4 @@
-<img width="847" alt="image" src="https://github.com/Shivendra12131/Event-management-system/assets/100084000/daa10ac2-1c50-487d-8903-ca05ddea73b6">EVENT MANAGEMENT SYSTEM
+#EVENT MANAGEMENT SYSTEM
 
 This project is a RESTful API built with Node.js and Express.js for managing events. It uses MongoDB as the database to store event data and includes routes for creating and finding events. Additionally, it utilizes utility functions in the utility folder for handling specific functionalities like formatted dates, fetching distances, and fetching weather data.
 Technologies Used
