@@ -1,4 +1,4 @@
-EVENT MANAGEMENT SYSTEM
+<img width="847" alt="image" src="https://github.com/Shivendra12131/Event-management-system/assets/100084000/daa10ac2-1c50-487d-8903-ca05ddea73b6">EVENT MANAGEMENT SYSTEM
 
 This project is a RESTful API built with Node.js and Express.js for managing events. It uses MongoDB as the database to store event data and includes routes for creating and finding events. Additionally, it utilizes utility functions in the utility folder for handling specific functionalities like formatted dates, fetching distances, and fetching weather data.
 Technologies Used
@@ -6,7 +6,7 @@ Node.js
 Express.js
 MongoDB
 
-Getting Started
+#Getting Started
 
 Clone the repository: git clone <repository-url>
 
@@ -20,7 +20,7 @@ API Endpoints
 POST /api/events/create - Create a new event
 GET /api/events/find - Find events based on user input (longitude, latitude, date)
 
-Usage
+#Usage
 
 Create a new event:
 Send a POST request to /api/events/create with event data (name, date, longitude, latitude)
@@ -30,25 +30,7 @@ Send a GET request to /api/events/find with user input (longitude, latitude, dat
 
 CSV dataset is directly inserted into mongodb databse
 
-project-root/
-│
-├── routes/                  # Contains route handlers for different endpoints
-│   ├──routes.js
-|
-│   
-│
-├── controllers/             # Contains controller logic for route handlers
-│   ├── events.js       
-│          
-│
-│
-├── models/                  # Contains MongoDB models for data schema
-│   ├── Event.js             # MongoDB model for events
-│   
-│
-└── utility/                 # Contains utility functions for handling specific functionalities
-    ├── fetchapi.js     # Utility function for Fetching data
-    
+
 Routes.js->
 in Route.js i have made two routes one for inserting data into the database and the other one for getting data from the database using post and get request.
 
