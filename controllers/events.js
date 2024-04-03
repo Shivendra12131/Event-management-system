@@ -27,11 +27,15 @@ const setFinalData = (eventsWithData, pageSize) => {
 
 
 const createEvent = async (req, res) => {
-   const requiredFields = ['event_name', 'city_name', 'date', 'time', 'latitude', 'longitude'];
-   const missingFields = requiredFields.filter(field => !(field in req.body));
-   if (missingFields.length > 0) {
-     return res.status(400).json({ error: `Missing required field(s): ${missingFields.join(', ')}` });
-   }
+const requiredFields = ['event_name', 'city_name', 'date', 'time', 'latitude', 'longitude'];
+const missingFields = requiredFields.filter(field => !(field in req.body));
+
+if (missingFields.length > 0) {
+  
+  return res.status(400).json({
+    success:false,
+     error: missingFields });
+}
 
   try {
     
@@ -43,14 +47,25 @@ const createEvent = async (req, res) => {
     res.status(201).json(saveddata);
     res.end();
   } catch (error) {
+    
     console.error("Error creating event:", error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({
+      success:false, 
+      error: "Internal server error" 
+    });
   }
 };
 
 const findevents = async (req, res) => {
     try {
       const { latitude, longitude, date } = req.query;
+
+if(!latitude||!longitude||!date){
+  return res.json({
+    success:false,
+    error:"All fields are required"
+  })
+}
       let d = new Date(date);
       const dates = [];
       dates.push(formatDate(d));

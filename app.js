@@ -1,7 +1,7 @@
 const express=require('express')
 const app=express()
 const {connectMongoDb}=require('./database');
-const userrouter=require('./routes/routes')
+const eventsrouter=require('./routes/routes')
 require('dotenv').config();
 app.use(express.json());
 const PORT=process.env.PORT;
@@ -17,4 +17,4 @@ app.get('/',(req,res)=>{
 
 app.listen(PORT, () => console.log("hi"));
 
-app.use("/api/events",userrouter);
+app.use("/api/events",eventsrouter);
